@@ -1,0 +1,14 @@
+.global-router {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 1000;
+	background: #ccc;
+	border: 1px solid #008000;
+	padding: 5px;
+	border-radius: 4px;
+}
+.global-router a {
+	display: block;
+
+}
