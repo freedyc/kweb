@@ -15,5 +15,4 @@ const urls = [
   { "type": "t-learn-v", "title": "妙味课堂", "name": "miaoweiketang", "href": "https://miaov.com/", "description": ""},
   { "type": "", "title": "哔哩哔哩","name": "bilibili", "href": "https://www.bilibili.com/", "description": ""},
  ]
-
 export default urls;
