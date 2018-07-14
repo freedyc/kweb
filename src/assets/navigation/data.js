@@ -1,4 +1,4 @@
-[
+export default [
     {
         "listType":"欢迎加入前端圈子",
         "titleType":"前端导航",
