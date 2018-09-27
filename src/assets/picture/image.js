@@ -1,12 +1,12 @@
 import React from 'react'
 import { Image } from 'semantic-ui-react'
-import imgUrl from '../../img/img1.jpg';
+import imgUrl from '../../img/zebra.jpg';
 
-const ImageExampleFluid = () => (
+const ZebraImageFluid = () => (
 	<div>
 		<Image src={imgUrl} fluid />
 	</div>
   
 )
  
-export default ImageExampleFluid
+export default ZebraImageFluid;

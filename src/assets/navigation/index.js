@@ -69,7 +69,6 @@ const NavItem = (props) => {
 	const {
 		title,
 		href,
-		description,
 		name
 	} = props;
 
@@ -81,8 +80,6 @@ const NavItem = (props) => {
 		    			<h3>{title}</h3>
 		    		</a>
 		    	</Card.Header>
-		    	<Card.Meta>{name}</Card.Meta>
-		    	<Card.Description>{description}</Card.Description>
 		  	</Card.Content>
 		</Card>
 	)
