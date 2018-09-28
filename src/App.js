@@ -15,7 +15,7 @@ class App extends Component {
            <Link to="/nav">Front End</Link>
         </div>
             <Route path="/nav" component={Navigation} />
-            <Route path="/pic" component={Picture} />
+            <Route path="/pic" exact  component={Picture} />
         </div>
       </Router>
     );

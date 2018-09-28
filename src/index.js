@@ -6,11 +6,11 @@ import './css/index.css';
 import App from './App';
 
 const AppRouter = () => {
-	return (
-		<Router>
-    		<Route axact path="/" component={App}/>
-  		</Router>
-  	)
+    return (
+        <Router>
+            <Route axact path="/" component={App}/>
+        </Router>
+    )
 };
 
 ReactDOM.render(<AppRouter />, document.getElementById('root'));
