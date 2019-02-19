@@ -4,8 +4,17 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './css/index.css';
 import App from './App';
+import store from './store';
 
-const AppRouter = () => {
+setInterval(() => {
+    store.dispatch({ type: 'SHOW_MESSAGE' });
+}, 1000)
+
+store.subscribe(() => {
+    console.log(store.getState());
+});
+
+const AppRouter = () => {    
     return (
         <Router>
             <Route axact path="/" component={App}/>
