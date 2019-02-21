@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 
-const reducer = (state = 'No message', action) => {
+const reducer = (state = {}, action) => {
     const { type } = action;
     switch (type) {
         case 'REFRESH_TIME':
-            return new Data(); 
+            return { time: new Date() };
         default:
             return state
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import injectSheet, { jss, ThemeProvider } from "react-jss";
+import Time from './time';
 console.log(jss.version);
 const styles = theme => ({
   wrapper: () => ({
@@ -39,6 +40,7 @@ const Navigator = ({ classes }) => (
     <p className={classes.info}>{navigator.appName}</p>
     <h6 className={classes.title}>操作系统:</h6>
     <p className={classes.info}>{navigator.platform}</p>
+    <Time />
   </div>
 );
 

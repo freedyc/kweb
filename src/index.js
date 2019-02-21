@@ -2,23 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
 import './css/index.css';
 import App from './App';
 import store from './store';
-
-setInterval(() => {
-    store.dispatch({ type: 'REFRESH_TIME' });
-}, 1000)
-
-store.subscribe(() => {
-    console.log(store.getState());
-});
-
-const AppRouter = () => {    
+const AppRouter = () => {
     return (
-        <Router>
-            <Route axact path="/" component={App}/>
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <Route axact path="/" component={App}/>
+            </Router>
+        </Provider>
     )
 };
 
