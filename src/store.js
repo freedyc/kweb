@@ -1,12 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 
-let count = 0;
 const reducer = (state = 'No message', action) => {
     const { type } = action;
     switch (type) {
-        case 'SHOW_MESSAGE':
-            count += 1
-            return `${count} a message`; 
+        case 'REFRESH_TIME':
+            return new Data(); 
         default:
             return state
     }

@@ -7,7 +7,7 @@ import App from './App';
 import store from './store';
 
 setInterval(() => {
-    store.dispatch({ type: 'SHOW_MESSAGE' });
+    store.dispatch({ type: 'REFRESH_TIME' });
 }, 1000)
 
 store.subscribe(() => {
