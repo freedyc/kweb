@@ -1,7 +1,8 @@
 import React from 'react';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 
 const Time = (props) => {
+    console.log(props);
     return (
         <div>时间：{props.time}</div>
     )

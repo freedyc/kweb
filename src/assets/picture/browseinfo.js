@@ -54,7 +54,7 @@ const judgeBrowser = () => {
   }
 }
 const judgeSystem = () => {
-  return /\([\w\s\.]+\;/.exec(navigator.userAgent)[0].slice(1, -1);
+  return /\([\w\s.]+;/.exec(navigator.userAgent)[0].slice(1, -1);
 }
 
 const StyledNavigator = injectSheet(styles)(Navigator);

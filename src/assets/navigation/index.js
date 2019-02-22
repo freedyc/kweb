@@ -5,7 +5,6 @@ import _ from 'lodash'
 const types = _.groupBy(data, (obj) => {
 	return obj.listType
 })
-console.log(types);
 
 const NavTypes = (props) => {
 	const { list } = props;
@@ -23,10 +22,10 @@ class NavigationGroup extends Component {
 	    const { visible } = this.state;
 	    this.setState({ visible: !visible })
 	}
-		
+
 	render() {
 		const { visible } = this.state;
-		const { 
+		const {
 			typeName,
 			items
 		} = this.props;
@@ -40,7 +39,7 @@ class NavigationGroup extends Component {
 					<Card.Group>
 						{ visible ?  items.map((item) => <NavTypes key={item.href} list={item} />): null}
 					</Card.Group>
-				</Segment> 
+				</Segment>
 			</div>
 
 		)
@@ -49,27 +48,25 @@ class NavigationGroup extends Component {
 
 const Navigation = () => {
 	const style = {
-		overflowX: 'hidden', 
-		overflowY: "auto", 
+		overflowX: 'hidden',
+		overflowY: "auto",
 		padding: '20px',
-		width: '100%', 
+		width: '100%',
 		height: '100%'
 	};
 	return (
 		<div style={style}>
-			{ 
+			{
 				_.map(types, (v, k)=> <NavigationGroup key={ k } typeName={ k } items={v} />)
 			}
 		</div>
 	)
 }
 
-
 const NavItem = (props) => {
 	const {
 		title,
 		href,
-		name
 	} = props;
 
 	return (

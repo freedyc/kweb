@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import './css/index.css';
 import App from './App';
 import store from './store';
+setInterval(() => {
+    store.dispatch({ type: 'REFRESH_TIME' });
+}, 1000)
 const AppRouter = () => {
     return (
         <Provider store={store}>

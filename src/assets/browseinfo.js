@@ -1,7 +1,6 @@
 import React from "react";
-import injectSheet, { jss, ThemeProvider } from "react-jss";
-import Time from './time';
-console.log(jss.version);
+import injectSheet, { ThemeProvider } from "react-jss";
+
 const styles = theme => ({
   wrapper: () => ({
     padding: "5px",
@@ -40,7 +39,6 @@ const Navigator = ({ classes }) => (
     <p className={classes.info}>{navigator.appName}</p>
     <h6 className={classes.title}>操作系统:</h6>
     <p className={classes.info}>{navigator.platform}</p>
-    <Time />
   </div>
 );
 
@@ -51,10 +49,8 @@ const theme = {
   color: "#000"
 };
 
-const Browse = () => (
+export default Browse = () => (
   <ThemeProvider theme={theme}>
     <StyledNavigator />
   </ThemeProvider>
 );
-
-export default Browse;
