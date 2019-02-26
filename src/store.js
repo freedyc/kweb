@@ -1,16 +1,13 @@
-import { createStore, compose} from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import reducer from './common/reducer';
+import saga from './common/saga';
 
-const enhancer = (window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) || compose
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
+const sagaMiddleware = createSagaMiddleware();
 
-const reducer = (state = {}, action) => {
-    const { type } = action;
-    switch (type) {
-        case 'REFRESH_TIME':
-            return { time: (new Date()).toJSON() };
-        default:
-            return state
-    }
-}
+const enhancer = composeEnhancer(applyMiddleware(sagaMiddleware));
 const store = createStore(reducer, enhancer);
+sagaMiddleware.run(saga);
 
 export default store;
