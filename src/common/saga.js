@@ -1,6 +1,6 @@
-import { takeLatest, put } from 'redux-saga/effects';
+import { takeLatest, put, delay } from 'redux-saga/effects';
 import {
-    REFRESH_TIME
+    REFRESH_TIME,
 } from './constants';
 
 import {
@@ -8,9 +8,13 @@ import {
 } from './actions';
 
 function* refresh() {
-    yield put(refreshTime());
+    while (true) {
+        yield delay(1000);
+        console.log('fresh  time');
+        yield put(refreshTime());
+    }
 }
 
 export default function* () {
-    takeLatest(REFRESH_TIME, refresh);
+    yield takeLatest(REFRESH_TIME, refresh);
 }

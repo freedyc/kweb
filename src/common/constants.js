@@ -1,3 +1,3 @@
-const prefix = 'common/'
+const prefix = 'common'
 
-const REFRESH_TIME = `${prefix}/REFRESH_TIME`;
+export const REFRESH_TIME = `${prefix}/REFRESH_TIME`;

@@ -4,7 +4,7 @@ const initState = {
 }
 
 export default (state = initState, action) => {
-    const { type, payload } = action;
+    const { type } = action;
     switch (type) {
         case 'REFRESH_TIME':
             return { ...state, time: moment().format('YYYY-MM-DD HH:mm:ss') };
