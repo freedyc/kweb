@@ -1,4 +1,5 @@
-import { takeLatest, put, delay } from 'redux-saga/effects';
+import { takeLatest, put, delay, cancel, fork } from 'redux-saga/effects';
+import { CANCEL } from 'redux-saga';
 import {
     REFRESH_TIME,
 } from './constants';
@@ -14,7 +15,30 @@ function* refresh() {
         yield put(refreshTime());
     }
 }
+function* test() {
+    console.log('start');
+    const task = yield fork(fetch);
+    yield cancel(task);
+}
+function fetch() {
+    console.log('fetch');
+    let timerId;
+    const promise = new Promise(function(resolve, reject) {
+        console.log('开始')
+        try {
+            timerId = setInterval(function() {
+                console.log("done")
+                resolve("done");
+            },3000)
+        } catch (error) {
+            reject(error)
+        }
+    });
+    promise[CANCEL] = () => clearInterval(timerId);
+    return promise;
+}
 
 export default function* () {
+    yield* test();
     yield takeLatest(REFRESH_TIME, refresh);
 }
