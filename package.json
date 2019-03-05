@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.14.1",
     "moment": "^2.24.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -14,7 +15,9 @@
     "redux": "^4.0.1",
     "redux-saga": "^1.0.1",
     "semantic-ui-css": "^2.3.3",
-    "semantic-ui-react": "^0.82.3"
+    "semantic-ui-react": "^0.82.3",
+    "socket.io-client": "^2.2.0",
+    "xterm": "^3.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
