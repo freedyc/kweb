@@ -1,5 +1,5 @@
 import React from "react";
-import injectSheet, { ThemeProvider } from "react-jss";
+import injectSheet, { jss, ThemeProvider } from "react-jss";
 
 const styles = theme => ({
   wrapper: () => ({
@@ -13,7 +13,7 @@ const styles = theme => ({
     bottom: 0,
     color: "#fff",
     display: "inline-block",
-    width: "300px",
+    width: "350px",
   }),
   title: {
   	paddingLeft: "10px",
@@ -36,11 +36,26 @@ const styles = theme => ({
 const Navigator = ({ classes }) => (
   <div className={classes.wrapper}>
     <h6 className={classes.title}>浏览器名称:</h6>
-    <p className={classes.info}>{navigator.appName}</p>
+    <p className={classes.info}>{judgeBrowser()}</p>
     <h6 className={classes.title}>操作系统:</h6>
-    <p className={classes.info}>{navigator.platform}</p>
+    <p className={classes.info}>{judgeSystem()}</p>
   </div>
 );
+const judgeBrowser = () => {
+  const { userAgent } = navigator;
+  if(userAgent.includes('Firefox')) {
+    return 'Firefox';
+  }
+  if(userAgent.includes('Chrome') && navigator.vendor.includes("Google")) {
+    return 'Chrome'
+  }
+  if(userAgent.includes('Trident')) {
+    return 'IE'
+  }
+}
+const judgeSystem = () => {
+  return /\([\w\s.]+;/.exec(navigator.userAgent)[0].slice(1, -1);
+}
 
 const StyledNavigator = injectSheet(styles)(Navigator);
 
@@ -49,8 +64,10 @@ const theme = {
   color: "#000"
 };
 
-export default Browse = () => (
+const Browse = () => (
   <ThemeProvider theme={theme}>
     <StyledNavigator />
   </ThemeProvider>
 );
+
+export default Browse;

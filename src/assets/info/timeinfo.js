@@ -9,7 +9,7 @@ class Time extends React.Component {
     constructor(props, context) {
         super(props);
         console.log(context);
-    }   
+    }
     componentWillMount() {
         const { refreshTime } = this.props;
         this.timeId = setInterval(() => refreshTime(), 1000);

@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 .global-router {
 	position: absolute;
 	right: 10px;
@@ -11,3 +12,4 @@
 .global-router a {
 	display: block;
 }
+

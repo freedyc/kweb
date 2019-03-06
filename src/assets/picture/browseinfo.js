@@ -1,6 +1,6 @@
 import React from "react";
-import injectSheet, { jss, ThemeProvider } from "react-jss";
-console.log(jss.version);
+import injectSheet, { ThemeProvider } from "react-jss";
+
 const styles = theme => ({
   wrapper: () => ({
     padding: "5px",

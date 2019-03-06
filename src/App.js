@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css'
 import './css/App.css';
-import Picture from './assets/picture';
-import Navigation from './assets/navigation/';
-import Term from './assets/networkConfig';
-import Time from './assets/time';
-
+import {
+    Picture,
+    Navigation,
+    Term,
+} from './assets/index'
 
 class App extends Component {
   render() {
@@ -17,7 +17,6 @@ class App extends Component {
                 <Link to="/pic">Home</Link>
                 <Link to="/nav">Front End</Link>
                 <Link to="/term">Terminal</Link>
-                <Time />
             </div>
             <div>
                 <Route path="/nav" component={Navigation} />

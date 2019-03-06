@@ -24,7 +24,6 @@ function fetch() {
     console.log('fetch');
     let timerId;
     const promise = new Promise(function(resolve, reject) {
-        console.log('开始')
         try {
             timerId = setInterval(function() {
                 console.log("done")
