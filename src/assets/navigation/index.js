@@ -9,9 +9,7 @@ const types = _.groupBy(data, (obj) => {
 const NavTypes = (props) => {
 	const { list } = props;
  	return (
-		<div >
-			<NavItem {...list} />
-		</div>
+		<NavItem {...list} />
 	)
 }
 
@@ -29,10 +27,9 @@ class NavigationGroup extends Component {
 			typeName,
 			items
 		} = this.props;
-		console.log(typeName, items);
 		return (
 			<div>
-				<Segment color='green'>
+				<Segment color='green' style={{ marginTop: '10px' }}>
 					<Header onClick={this.handleClick}>
 						<Button>{typeName}</Button>
 					</Header>
@@ -70,10 +67,10 @@ const NavItem = (props) => {
 	} = props;
 
 	return (
-		<Card>
+		<Card key={title}>
 		  	<Card.Content>
 		    	<Card.Header>
-		    		<a href={href}>
+		    		<a href={href} target="_blank">
 		    			<h3>{title}</h3>
 		    		</a>
 		    	</Card.Header>

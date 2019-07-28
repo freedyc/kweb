@@ -11,7 +11,7 @@ const AppRouter = () => {
     return (
         <Provider store={store}>
             <Router>
-                <Route axact path="/" component={App}/>
+                <App />
             </Router>
         </Provider>
     )

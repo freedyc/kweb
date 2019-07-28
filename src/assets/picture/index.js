@@ -4,9 +4,9 @@ import Image from './image';
 
 const Picture = () => {
 	return (
-		<div>
+		<div style={{height: '100%', overflow: 'auto'}}>
 			<Image />
-			<BrowseInfo />
+            <BrowseInfo />
 		</div>
 	)
 }

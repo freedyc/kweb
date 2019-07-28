@@ -1,30 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css'
+import Routes from './routes';
+import Menus from './common/components/menus';
 import './css/App.css';
-import {
-    Picture,
-    Navigation,
-    Term,
-} from './assets/index'
 
 class App extends Component {
   render() {
     return (
-      <Router>
         <div className="App">
-            <div className="global-router">
-                <Link to="/pic">Home</Link>
-                <Link to="/nav">Front End</Link>
-                <Link to="/term">Terminal</Link>
-            </div>
-            <div>
-                <Route path="/nav" component={Navigation} />
-                <Route path="/pic" exact  component={Picture} />
-                <Route path="/term" component={Term} />
-            </div>
+            <Menus />
+            <Routes />
         </div>
-      </Router>
     );
   }
 }

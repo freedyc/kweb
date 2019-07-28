@@ -1,7 +1,6 @@
 var http = require('http');
 
 var server = http.createServer(function(rep, res) {
-    console.log(rep, res);    
     res.end("hello");
 })
 
