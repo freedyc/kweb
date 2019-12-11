@@ -46,4 +46,3 @@ class TerminalComponent extends React.Component {
 }
 
 export default TerminalComponent;
-1
