@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Segment, Divider } from 'semantic-ui-react'
+import { Image } from 'semantic-ui-react'
 import imgUrl from '../../images/zebra.png';
 import img1 from '../../images/bg/scenery-1.jpg';
 import img2 from '../../images/bg/scenery-2.jpg';
