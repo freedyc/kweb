@@ -9,7 +9,7 @@ class Console extends React.Component {
         super(props);
         this.newTabIndex = 0;
         const panes = [
-            { title: '10.1.108.41', content: '', key: '1', host: '10.1.108.41', username: 'root', password: 'zdns@knet.cn' },
+            { title: 'localhost', content: '', key: '1', host: 'localhost', username: '', password: '' },
         ];
         this.state = {
             activeKey: panes[0].key,
@@ -28,7 +28,7 @@ class Console extends React.Component {
     add = () => {
         const { panes } = this.state;
         const activeKey = `newTab${this.newTabIndex++}`;
-        panes.push({ title: '10.1.108.41', content: '', key: activeKey, host: '10.1.108.41', username: 'root', password: 'zdns@knet.cn'});
+        panes.push({ title: 'localhost', content: '', key: activeKey, host: 'localhost', username: '', password: ''});
         this.setState({ panes, activeKey });
     };
 

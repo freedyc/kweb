@@ -53,7 +53,7 @@ class Setting extends React.Component {
     }
     componentDidMount() {
         localforage.getItem('hosts').then(value => {
-            this.setState({...this.state, ...value[0]});
+            this.setState({...this.state, ...value && value[0]});
         })
     }
     render() {
