@@ -70,7 +70,7 @@ const NavItem = (props) => {
 		<Card key={title}>
 		  	<Card.Content>
 		    	<Card.Header>
-		    		<a href={href} target="_blank">
+		    		<a target="_blank" rel="noopener noreferrer" href={href}>
 		    			<h3>{title}</h3>
 		    		</a>
 		    	</Card.Header>
